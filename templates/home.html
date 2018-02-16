@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block vsebina %}
+
+<div class="jumbotron">
+    <h1>Ninja Tech Forum</h1>
+    <p>Welcome to Ninja Tech Forum</p>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Naslov</th>
+        <th>Uporabnik</th>
+        <th>Ustvarjeno</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for objava in seznam %}
+    <tr>
+        <td><a href="/prikazi-objavo/{{ objava.key.id() }}">{{ objava.naslov }}</a></td>
+        <td>{{ objava.uporabnik_email }}</td>
+        <td>{{ objava.cas_objave.strftime('%d.%m.%Y ob %H:%M') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

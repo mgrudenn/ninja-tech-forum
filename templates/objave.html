@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}objava{% endblock title %}
+{% block vsebina %}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title">{{ objava.naslov }}</h1>
+    </div>
+
+    <div class="panel-body">
+        <p><strong>Avtor: </strong>{{ objava.uporabnik_email }}</p>
+        <p>{{ objava.vsebina }}</p>
+    </div>
+    <div class="panel-footer">
+        <p>{{ objava.cas_objave }}</p>
+    </div>
+</div>
+
+{% endblock vsebina %}
